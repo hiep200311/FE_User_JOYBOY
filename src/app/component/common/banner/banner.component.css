@@ -1,8 +1,23 @@
-
-
 .banner {
-  margin: 25px 0;
+  margin: 20px 0;
 }
+
+.has-scrollbar { padding-bottom: 5px; }
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 3px solid white;
+  border-radius: 20px;
+}
+
+.has-scrollbar:hover::-webkit-scrollbar-thumb { background: #1dd75b; }
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover { background: #1dd75b; }
 
 .slider-container {
   display: flex;
@@ -30,7 +45,6 @@
 }
 
 .banner-content {
-  background: hsla(0, 0%, 100%, 0.8);
   position: absolute;
   bottom: 25px;
   left: 25px;
@@ -71,9 +85,85 @@
   padding: 4px 10px;
   border-radius: 5px;
   transition: 0.3s ease;
+}
 
-  &:hover {
-    background: hsl(224, 39%, 16%);
+@media (min-width: 280px) {
+  .slider-item {
+    aspect-ratio: 7 / 3;
+  }
+
+  .banner-content {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    max-width: 250px;
+  }
+
+  .banner-subtitle {
+    font-size:  0.575rem;
+    font-weight: bold;
+  }
+
+  .banner-title {
+    font-size: 0.745rem;
+  }
+
+  .banner-text {
+    display: block;
+    color: #ccc;
+    font-size: 0.575rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    p {
+      font-size: 1.275rem;
+    }
+  }
+
+  .banner-btn {
+    padding: 3px 14px;
+    font-size: 0.55rem;
+  }
+}
+
+@media (min-width: 350px) {
+  .slider-item {
+    aspect-ratio: 7 / 3;
+  }
+
+  .banner-content {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    max-width: 250px;
+  }
+
+  .banner-subtitle {
+    font-size:  1.025rem;
+    font-weight: bold;
+  }
+
+  .banner-title {
+    font-size: 1.165rem;
+  }
+
+  .banner-text {
+    display: block;
+    color: #ccc;
+    font-size: 0.675rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    p {
+      font-size: 1.275rem;
+    }
+  }
+
+  .banner-btn {
+    padding: 5px 17px;
+    font-size: 0.55rem;
   }
 }
 

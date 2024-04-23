@@ -6,12 +6,16 @@ import { HeaderComponent } from './component/common/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import {NgOptimizedImage} from "@angular/common";
 import { BannerComponent } from './component/common/banner/banner.component';
+import { HomeComponent } from './component/page/home/home.component';
+import { FooterComponent } from './component/common/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BannerComponent
+    BannerComponent,
+    HomeComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,

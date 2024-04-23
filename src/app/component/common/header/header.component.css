@@ -34,6 +34,10 @@ input::placeholder {
   font: inherit;
 }
 
+input:focus {
+  outline: none;
+}
+
 .header-top,
 .header-user-actions,
 .desktop-navigation-menu {
@@ -83,7 +87,7 @@ input::placeholder {
 }
 
 .search-btn:hover {
-  color: #00b050;
+  color: #1dd75b;
 }
 
 .mobile-bottom-navigation {
