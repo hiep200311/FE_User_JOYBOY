@@ -8,6 +8,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { BannerComponent } from './component/common/banner/banner.component';
 import { HomeComponent } from './component/page/home/home.component';
 import { FooterComponent } from './component/common/footer/footer.component';
+import { FilterProductComponent } from './component/page/filter-product/filter-product.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './component/common/footer/footer.component';
     HeaderComponent,
     BannerComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    FilterProductComponent
   ],
     imports: [
         BrowserModule,
