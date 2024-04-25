@@ -9,6 +9,7 @@ import { BannerComponent } from './component/common/banner/banner.component';
 import { HomeComponent } from './component/page/home/home.component';
 import { FooterComponent } from './component/common/footer/footer.component';
 import { FilterProductComponent } from './component/page/filter-product/filter-product.component';
+import { NewsComponent } from './component/page/news/news.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FilterProductComponent } from './component/page/filter-product/filter-p
     BannerComponent,
     HomeComponent,
     FooterComponent,
-    FilterProductComponent
+    FilterProductComponent,
+    NewsComponent
   ],
     imports: [
         BrowserModule,

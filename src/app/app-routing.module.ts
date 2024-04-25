@@ -2,8 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/page/home/home.component';
 import { FilterProductComponent } from './component/page/filter-product/filter-product.component';
+import { NewsComponent } from './component/page/news/news.component';
 
 const routes: Routes = [
+
+  {
+    path: 'news',
+    component: NewsComponent
+  },
 
   {
     path: '',
