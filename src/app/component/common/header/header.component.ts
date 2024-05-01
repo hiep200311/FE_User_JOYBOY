@@ -6,5 +6,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  isMenuOpen: boolean = false;
 
+  constructor() { }
+
+  toggleMobileMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

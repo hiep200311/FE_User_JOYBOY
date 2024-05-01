@@ -18,10 +18,6 @@ html {
   overscroll-behavior: contain;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-
-
-
 .card-wrapper{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -93,7 +89,7 @@ img{
 
 .content_evaluate1{
     color: yellow;
-    font-size: 20px;
+    font-size: 25px;
     margin-top: 6px;
   }
   
@@ -109,7 +105,6 @@ img{
     bottom: 0;
     height: 4px;
     width: 80px;
-    background: #12263a;
 }
 
 p{
@@ -171,6 +166,7 @@ p{
 .product-detail .product-detail-color li{
     margin: 0;
     list-style: none;
+    background: url(../../../../assets/banner/checked.png) left center no-repeat;
     background-size: 18px;
     padding-left: 1.7rem;
     margin: 0.4rem 0;
@@ -513,8 +509,9 @@ ul{
 
 .product-grid .showcase-rating {
   display: flex;
-  color: hsl(29, 90%, 65%);
-  margin-bottom: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 16px;
 }
 
 .product-grid .price-box {

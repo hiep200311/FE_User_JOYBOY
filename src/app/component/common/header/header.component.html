@@ -117,8 +117,8 @@
 
   <div class="mobile-bottom-navigation has-scrollbar">
 
-    <button class="action-btn">
-      <ion-icon name="menu-outline"></ion-icon>
+    <button class="action-btn" (click)="toggleMobileMenu()">
+      <ion-icon name="menu-outline">{{isMenuOpen ? "close-outline" : "menu-outline"}}</ion-icon>
     </button>
 
     <button class="action-btn">
@@ -140,7 +140,7 @@
 
   </div>
 
-  <nav class="mobile-navigation-menu  has-scrollbar">
+  <nav class="mobile-navigation-menu  has-scrollbar" [class.is-open]="isMenuOpen">
     <ul class="mobile-menu-category-list">
       <li class="menu-category">
         <a href="#" class="menu-title">Trang Chủ</a>

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,26 +7,16 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
+  @ViewChild('showcaseImg') showcaseImg!: ElementRef<HTMLImageElement>;
+
   ngOnInit(): void {
-    const imgs = document.querySelectorAll('.img-select a');
-    const imgBtns = Array.from(imgs);
-    let imgId = 1;
+  }
 
-    imgBtns.forEach((imgItem: Element) => {
-      imgItem.addEventListener('click', (event: Event) => {
-        event.preventDefault();
-        imgId = parseInt((imgItem as HTMLElement).dataset['id'] || "1", 10);
-        slideImage();
-      });
-    });
-
-    function slideImage(): void {
-      const displayWidth: number = (document.querySelector('.img-showcase img:first-child') as HTMLImageElement).clientWidth;
-
-      (document.querySelector('.img-showcase') as HTMLElement).style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+  changeShowcaseImage(event: MouseEvent): void {
+    const target = event.target as HTMLImageElement;
+    if (target.tagName === 'IMG') {
+      this.showcaseImg.nativeElement.src = target.src;
     }
-
-    window.addEventListener('resize', slideImage);
   }
 
 }

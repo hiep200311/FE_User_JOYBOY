@@ -485,8 +485,8 @@ html {
 
 .product-grid .showcase-rating {
   display: flex;
-  color: hsl(29, 90%, 65%);
-  margin-bottom: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .product-grid .price-box {
