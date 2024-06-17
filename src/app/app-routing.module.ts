@@ -4,6 +4,10 @@ import { HomeComponent } from './component/page/home/home.component';
 import { FilterProductComponent } from './component/page/filter-product/filter-product.component';
 import { NewsComponent } from './component/page/news/news.component';
 import { ProductDetailComponent } from './component/page/product-detail/product-detail.component';
+import { LoginPageComponent } from './component/page/login-page/login-page.component';
+import { RegisterPageComponent } from './component/page/register-page/register-page.component';
+import { ShoppingCartComponent } from './component/page/shopping-cart/shopping-cart.component';
+import { PaymentComponent } from './component/page/payment/payment.component';
 
 const routes: Routes = [
   {
@@ -12,18 +16,38 @@ const routes: Routes = [
   },
 
   {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent
+  },
+
+  {
     path: 'news',
     component: NewsComponent
   },
 
   {
-    path: 'filter-product',
-    component: FilterProductComponent
+    path: 'home',
+    component: HomeComponent 
   },
 
   {
-    path: 'home',
+    path: '',
     component: HomeComponent 
+  },
+
+  {
+    path: 'login',
+    component: LoginPageComponent
+  },
+
+  {
+    path: 'register',
+    component: RegisterPageComponent
+  },
+
+  {
+    path: 'payment',
+    component: PaymentComponent
   },
 
   {

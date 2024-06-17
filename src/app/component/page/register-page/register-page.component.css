@@ -7,7 +7,7 @@
 }
 .body{
     display: flex;
-    background: url(../../../../assets/banner/gundamjpg.jpg) no-repeat;
+    /* background: url(../../../../assets/banner/gundamjpg.jpg) no-repeat; */
     background-size: cover;
     height: 100vh;
     background-position: center;

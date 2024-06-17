@@ -56,20 +56,21 @@
 
       <div class="header-user-actions">
 
-        <button class="action-btn">
+        <a routerLink="/login"> <button class="action-btn">
           <ion-icon name="person-outline"></ion-icon>
-        </button>
+         </button></a>
 
         <button class="action-btn">
           <ion-icon name="heart-outline"></ion-icon>
           <span class="count">0</span>
         </button>
 
-        <button class="action-btn">
-          <ion-icon name="bag-handle-outline"></ion-icon>
-          <span class="count">0</span>
-        </button>
-
+        <a routerLink="/shopping-cart"> 
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+        </a>
       </div>
 
     </div>
@@ -87,7 +88,7 @@
         </li>
 
         <li class="menu-category">
-          <a routerLink="/filter-product" class="menu-title">Giới Thiệu</a>
+          <a routerLink="" class="menu-title">Giới Thiệu</a>
         </li>
 
         <li class="menu-category">
