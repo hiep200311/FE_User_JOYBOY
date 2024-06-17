@@ -10,7 +10,11 @@ import { HomeComponent } from './component/page/home/home.component';
 import { FooterComponent } from './component/common/footer/footer.component';
 import { FilterProductComponent } from './component/page/filter-product/filter-product.component';
 import { NewsComponent } from './component/page/news/news.component';
-import { ProductDetailComponent } from './component/common/product-detail/product-detail.component';
+import { ProductDetailComponent } from './component/page/product-detail/product-detail.component';
+import { LoginPageComponent } from './component/page/login-page/login-page.component';
+import { RegisterPageComponent } from './component/page/register-page/register-page.component';
+import { PaymentComponent } from './component/page/payment/payment.component';
+import { ShoppingCartComponent } from './component/page/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,12 @@ import { ProductDetailComponent } from './component/common/product-detail/produc
     FooterComponent,
     FilterProductComponent,
     NewsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LoginPageComponent, 
+    RegisterPageComponent,
+    PaymentComponent,
+    RegisterPageComponent,
+    ShoppingCartComponent
   ],
     imports: [
         BrowserModule,

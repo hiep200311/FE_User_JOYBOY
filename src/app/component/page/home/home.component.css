@@ -1,3 +1,12 @@
+
+fa-icon{
+  color: gold;
+  font-size: 15px;
+  cursor: pointer;
+
+  transition: color 0.3s ease-in-out;
+}
+
 a { text-decoration: none; }
 
 li { list-style: none; }
@@ -139,7 +148,7 @@ html {
 .product-minimal .showcase-content { width: calc(100% - 85px); }
 
 .product-minimal .showcase-title {
-  color: rgb(0, 176, 80);
+  color: #333;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: capitalize;
@@ -151,7 +160,7 @@ html {
 
 .product-minimal .showcase-category {
   width: max-content;
-  color: gray;
+  color: #333;
   font-size: 0.813rem;;
   text-transform: capitalize;
   margin-bottom: 3px;
@@ -177,7 +186,7 @@ html {
 }
 
 .title{
-  color: rgb(0, 176, 80);
+  color: #333;
   margin-bottom: 30px;
   border-bottom: 1px solid rgb(0, 176, 80);
   padding-top: 20px;
@@ -230,7 +239,7 @@ html {
 
 .product-featured .showcase-title {
   font-size: 22px;
-  color: rgb(0, 176, 80);
+  color: #333;
   overflow: hidden;
   white-space: nowrap;
 
@@ -240,7 +249,7 @@ html {
 }
 
 .product-featured .showcase-desc {
-  color: rgb(0, 176, 80);
+  color: black;
   font-size: 18px;
   font-weight: 300;
   margin-bottom: 10px;
@@ -310,8 +319,12 @@ html {
   border-radius: 4px;
 }
 
+.quantity{
+  color: black;
+}
+
 .product-featured .countdown-desc {
-  color: rgb(0, 176, 80);
+  color: black;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -464,7 +477,7 @@ html {
 .product-grid .showcase-content { padding: 15px 20px 0; }
 
 .product-grid .showcase-category {
-  color: rgb(0, 176, 80);
+  color: #333;
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
@@ -472,7 +485,7 @@ html {
 }
 
 .product-grid .showcase-title {
-  color: rgb(0, 176, 80);
+  color: black;
   font-size: 16px;
   font-weight: 400;
   text-transform: capitalize;
@@ -485,8 +498,8 @@ html {
 
 .product-grid .showcase-rating {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  color: hsl(29, 90%, 65%);
+  margin-bottom: 10px;
 }
 
 .product-grid .price-box {
@@ -533,7 +546,7 @@ html {
 }
 
 .testimonial-title {
-  color: rgb(0, 176, 80);
+  color: black;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 15px;
@@ -547,7 +560,7 @@ html {
 .testimonial-desc {
   max-width: 70%;
   margin: auto;
-  color: rgb(0, 176, 80);
+  color: black;
   font-size: 1rem;
 }
 
@@ -666,7 +679,7 @@ html {
 }
 
 .service-desc {
-  color: rgb(0, 176, 80);
+  color: black;
   font-size: 0.9rem;
   font-weight: 400;
 }
