@@ -8,10 +8,13 @@ import { LoginPageComponent } from './component/page/login-page/login-page.compo
 import { RegisterPageComponent } from './component/page/register-page/register-page.component';
 import { ShoppingCartComponent } from './component/page/shopping-cart/shopping-cart.component';
 import { PaymentComponent } from './component/page/payment/payment.component';
+import { ProfileComponent } from './component/page/profile/profile.component';
+import { AuthGuard } from './controller/auth-guard/auth.guard';
+
 
 const routes: Routes = [
   {
-    path: 'product-detail',
+    path: 'product-detail/:id',
     component: ProductDetailComponent
   },
 
@@ -31,8 +34,8 @@ const routes: Routes = [
   },
 
   {
-    path: '',
-    component: HomeComponent 
+    path: 'payment',
+    component: PaymentComponent 
   },
 
   {
@@ -53,7 +56,16 @@ const routes: Routes = [
   {
     path: 'product',
     component: FilterProductComponent
-  }
+  },
+
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+
+  
+  
 ];
 
 

@@ -5,91 +5,59 @@
       <div class = "card-wrapper">
           <div class = "card">
             <!-- card left -->
-            <div class = "product-imgs">
-              <div class = "img-display">
-                <div class = "img-showcase">
-                  <img #showcaseImg src = "../../../../assets/banner/gundam1.jpg" alt = "shoe image">     
+            <div class="product-imgs" *ngIf="product">
+              <div class="img-display">
+                <div class="img-showcase">
+                  <img #showcaseImg [src]="currentImage" alt="product image">     
                 </div>
               </div>
-              <div class = "img-select" (click)="changeShowcaseImage($event)">
-                <div class = "img-item">
-
-                    <img src = "../../../../assets/banner/gundam1.jpg" alt = "shoe image">
-
-                </div>
-                <div class = "img-item">
-
-                    <img src = "../../../../assets/banner/gundam2.webp" alt = "shoe image">
-
-                </div>
-                <div class = "img-item">
-
-                    <img src = "../../../../assets/banner/gumdam3.webp" alt = "shoe image">
-
-                </div>
-                <div class = "img-item">
-
-                    <img src = "../../../../assets/banner/gundam4.webp" alt = "shoe image">
-
+              <div class="img-select">
+                <div *ngFor="let img of product.images" class="img-item" (click)="changeShowcaseImages(img.image_url)">
+                  <img  [src]="'http://localhost:8888/api/v1/products/images/' + img.image_url" alt="product image">
                 </div>
               </div>
             </div>
             <!-- card right -->
+          <div *ngIf="product">
             <div class = "product-content">
-              <h2 class = "product-title">nike shoes</h2>
-              <a href = "#" class = "product-link">visit nike store</a>
+              <h2 class = "product-title">{{ product.name_product }}</h2>
+              <a href = "#" class = "product-link">visit {{ product.brand.brandName }} store</a>
               <div class = "product-rating">
                 <i class="content_evaluate1 fa-solid fa-star"></i>
                 <p class="evaluate1">5.0</p>
               </div>
       
-              <div class = "product-price">
-                <p class = "last-price">Old Price: <span>$257.00</span></p>
-                <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
+              <div class="product-price">
+                <p class="last-price">Old Price: <span>{{ currentPrice | currency }}</span></p>
+                <p class="new-price">New Price: <span>{{ currentDiscountedPrice | currency:'VND':'symbol':'2.2-2' }} ({{ currentDiscount.toFixed(2) }}%)</span></p>
+
               </div>
       
               <div class = "product-detail">
                 <h2>about this item: </h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
+                <p>{{ product.description }}</p>
+                
 
                 <div class="frame-shipping">
                    <p class="text-shipping">Vận chuyển: </p>
                    <p class="conten-shipping">Vận chuyển toàn quốc.</p>
                 </div>
-                <div class="product-detail-color">
-                  <p class="text_color">
-                    Màu sắc
-                  </p>
-                  <div class="frame-color">
-                    <button class="btn-color">
-                      <img class="img-btn" src="../../../../assets/banner/gundam1.jpg" alt="">
-                      Black
-                    </button>
-                    <button class="btn-color">
-                      <img class="img-btn" src="../../../../assets/banner/gundam1.jpg" alt="">
-                      Yellow
-                    </button>
-                    <button class="btn-color">
-                      <img class="img-btn" src="../../../../assets/banner/gundam1.jpg" alt="">
-                      Bink
-                    </button>
-                    <button class="btn-color">
-                      <img class="img-btn" src="../../../../assets/banner/gundam1.jpg" alt="">
-                      Black
-                    </button>
-                    <button class="btn-color">
-                      <img class="img-btn" src="../../../../assets/banner/gundam1.jpg" alt="">
-                      Yellow
-                    </button>
-                    <button class="btn-color">
-                      <img class="img-btn" src="../../../../assets/banner/gundam1.jpg" alt="">
-                      Bink
-                    </button>
-                   
-                   
-                  </div>
-                  
+                <div class="product-detail-color" *ngIf="product">
+                  <!-- Duyệt qua từng loại thuộc tính (attributeType) -->
+                  <ng-container *ngFor="let attributeType of uniqueAttributeTypes()">
+                    <!-- Hiển thị tên của attributeType -->
+                    <p class="text_color">{{ attributeType }}</p>
+                    
+                    <!-- Hiển thị các thuộc tính (attributes) thuộc loại attributeType -->
+                    <div class="frame-color">
+                      <div *ngFor="let attribute of filteredAttributes(attributeType)">
+                        <button class="btn-color" (click)="changeShowcaseImage(attribute)">
+                          <img class="img-btn" [src]="'http://localhost:8888/api/v1/products/images/' + attribute.image_url" alt="">
+                          {{ attribute.attributeOption.attribute_option_name }} 
+                        </button>
+                      </div>
+                    </div>
+                  </ng-container>
                 </div>
               </div>
 
@@ -106,7 +74,7 @@
               </div>
       
               <div class = "purchase-info">
-                <button type = "button" class = "btn_shopping">
+                <button type = "button"  routerLink="/shopping-cart" class = "btn_shopping">
                   <i class = "fas fa-shopping-cart"></i>
                   Thêm vào giỏ hàng
                 </button>
@@ -133,6 +101,7 @@
                 </a>
               </div>
             </div>
+          </div>
           </div>
       </div>
 

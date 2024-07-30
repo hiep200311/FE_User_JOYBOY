@@ -1,0 +1,131 @@
+<div class="container light-style flex-grow-1 container-p-y contener">
+    <h4 class="font-weight-bold py-3 mb-4">
+      Cài đặt tài khoản
+    </h4>
+    <div class="card overflow-hidden">
+      <div class="row no-gutters row-bordered row-border-light">
+        <div class="col-md-3 pt-0">
+          <div class="list-group list-group-flush account-settings-links">
+            <a class="list-group-item list-group-item-action" [class.active]="currentTab === 'general'" (click)="setTab('general')">Tổng quan</a>
+            <a class="list-group-item list-group-item-action" [class.active]="currentTab === 'password'" (click)="setTab('password')">
+              Đổi mật khẩu</a>
+            <a class="list-group-item list-group-item-action" [class.active]="currentTab === 'info'" (click)="setTab('info')">Thay đổi thông tin</a>
+            <div class="list-group-item list-group-item-action" (click)="logout()">Đăng xuất</div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div class="tab-pane fade" [class.show]="currentTab === 'general'" [class.active]="currentTab === 'general'" id="account-general">
+              <div class="card-body media align-items-center images_name">
+                <img [src]="userData?.profileImage 
+                    ? 'http://localhost:8888/api/v1/products/images/' + userData.profileImage : 'https://bootdey.com/img/Content/avatar/avatar1.png'" 
+                    alt="User Avatar" class="img_avatar">
+                <div class="username">{{ userData?.username }}</div> <!-- Hiển thị tên người dùng -->
+              </div>
+              <hr class="border-light m-0">
+              <div class="card-body">
+                <div class="form-group">
+                  <p class="form-label content_p">Email: {{ userData?.email }}</p> <!-- Hiển thị email -->
+                </div>
+                <div class="form-group">
+                  <p class="form-label content_p">Phone: {{ userData?.phoneNumber }}</p> <!-- Hiển thị số điện thoại -->
+                </div>
+              </div>
+            </div>
+            
+            <form (ngSubmit)="changePassword()" class="tab-pane fade" [class.show]="currentTab === 'password'" [class.active]="currentTab === 'password'" id="account-change-password">
+              <div class="card-body pb-2">
+                <div class="form-group">
+                  <label class="form-label">Current password</label>
+                  <input type="password" class="form-control" [(ngModel)]="oldPassword" name="oldPassword" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">New password</label>
+                  <input type="password" class="form-control" [(ngModel)]="newPassword" name="newPassword" required>
+                </div>
+            
+                <div *ngIf="changePasswordMessage" class="alert alert-success mt-2">
+                  {{ changePasswordMessage }}
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+                  {{ errorMessage }}
+                </div>
+            
+                <div class="text-right mt-3">
+                  <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
+                  <button type="button" class="btn btn-default" (click)="setTab('general')">Cancel</button>
+                </div>
+              </div>
+            </form>
+            
+            
+            <div class="tab-pane fade" [class.show]="currentTab === 'info'" [class.active]="currentTab === 'info'" id="account-info">
+              <div class="card-body media align-items-center frame_image">
+                <img 
+                  [src]="tempAvatarUrl || userData?.avatarUrl || 'https://bootdey.com/img/Content/avatar/avatar1.png'" 
+                  alt="User Avatar" 
+                  class="d-block ui-w-80 add_images"
+                >
+                <div class="media-body ml-4">
+                  <label class="btn btn-outline-primary">
+                    Upload new photo
+                    <input 
+                      type="file" 
+                      class="account-settings-fileinput" 
+                      (change)="onFileSelected($event)"
+                    >
+                  </label> &nbsp;
+                  <button 
+                    type="button" 
+                    class="btn btn-primary" 
+                    (click)="uploadAvatar()"
+                  >
+                    Upload
+                  </button>
+                  <button 
+                    type="button" 
+                    class="btn btn-default md-btn-flat" 
+                    (click)="onReset()"
+                  >
+                    Reset
+                  </button>
+                  <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                </div>
+              </div>      
+              
+              <hr class="border-light m-0">                                                 
+
+              <form (ngSubmit)="updateUser()" class="card-body">
+                <div class="form-group1">
+                  <label class="form-label">Username</label>
+                  <input type="text" class="form-control mb-1" [(ngModel)]="userData.username" name="username">
+                </div>
+                <div class="form-group1">
+                  <label class="form-label">Firstname</label>
+                  <input type="text" class="form-control" [(ngModel)]="userData.firstName" name="firstName">
+                </div>
+                <div class="form-group1">
+                  <label class="form-label">Lastname</label>
+                  <input type="text" class="form-control" [(ngModel)]="userData.lastName" name="lastName">
+                </div>
+                <div class="form-group1">
+                  <label class="form-label">E-mail</label>
+                  <input type="text" class="form-control mb-1" [(ngModel)]="userData.email" name="email">
+                </div>
+                <div class="form-group1">
+                  <label class="form-label">Phone</label>
+                  <input type="text" class="form-control mb-1" [(ngModel)]="userData.phoneNumber" name="phoneNumber">
+                </div>
+                <div class="text-right mt-3">
+                  <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
+                  <button type="button" class="btn btn-default">Cancel</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

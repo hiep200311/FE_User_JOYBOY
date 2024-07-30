@@ -1,0 +1,21 @@
+{
+  "register": {
+    "successRedirectUrl": "/login",
+    "usernameMinLength": 4,
+    "usernameMaxLength": 15,
+    "passwordMinLength": 6,
+    "passwordMaxLength": 35
+  },
+  "messages": {
+    "registerSuccess": "Đăng ký thành công!",
+    "registerFailure": "Đăng ký không thành công, vui lòng thử lại.",
+    "usernameRequired": "Tên người dùng là bắt buộc.",
+    "usernameMinLength": "Tên người dùng phải có ít nhất 4 ký tự.",
+    "usernameMaxLength": "Tên người dùng không được vượt quá 15 ký tự.",
+    "emailRequired": "Bắt buộc phải có email.",
+    "emailInvalid": "Email không hợp lệ.",
+    "passwordRequired": "Mật khẩu là bắt buộc.",
+    "passwordMinLength": "Mật khẩu phải có ít nhất 6 ký tự.",
+    "passwordMaxLength": "Mật khẩu có tối đa 35 ký tự."
+  }
+}

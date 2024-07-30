@@ -40,11 +40,10 @@ img{
 }
 .img-showcase{
     display: flex;
-    width: 100%;
+    width: 500px;
+    height: 500px;
     transition: all 0.5s ease;
 }
-
-
 
 .container { padding: 0 15px; }
 
@@ -175,15 +174,16 @@ p{
 }
 .product-detail .product-detail-color{
     margin: 1rem 0; 
-    display: flex;
+    display: block;
     color: rgb(0, 176, 80);
 }
 
 .product-detail-color .text_color{
-    width: 20%;
    font-size: 18px;
    margin-top: 5px;
    color: #333;
+   width: 20%;
+   margin-top: 30px;
 }
 
 .frame-shipping{
@@ -196,7 +196,6 @@ p{
 
 .product-detail-color .frame-color{
     display: flex;
-    margin-left: 40px;
     flex-wrap: wrap;
 }
 

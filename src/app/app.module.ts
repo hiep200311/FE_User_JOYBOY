@@ -15,6 +15,10 @@ import { LoginPageComponent } from './component/page/login-page/login-page.compo
 import { RegisterPageComponent } from './component/page/register-page/register-page.component';
 import { PaymentComponent } from './component/page/payment/payment.component';
 import { ShoppingCartComponent } from './component/page/shopping-cart/shopping-cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './component/page/profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -30,10 +34,14 @@ import { ShoppingCartComponent } from './component/page/shopping-cart/shopping-c
     RegisterPageComponent,
     PaymentComponent,
     RegisterPageComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ProfileComponent,
   ],
     imports: [
         BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
         AppRoutingModule,
         IonicModule.forRoot({}),
         NgOptimizedImage,

@@ -2,26 +2,35 @@
 <div class="container">
 <div class="Form register-form">
     <h2>Đăng Ký Tài Khoản</h2>
-    <form action="#">
-        <div class="input-box">
-            <label for="#">Tên Đăng nhập</label>
-            <input type="text" placeholder="Nhập tên người dùng*" class="input-with-placeholder">
-           
-           
+    <form (ngSubmit)="onSubmit(registerForm)"  #registerForm="ngForm">
+      <div class="input-box">
+        <label for="username">Tên Đăng nhập</label>
+        <input type="text" id="username" [(ngModel)]="user.username" name="username" placeholder="Nhập tên người dùng*" class="input-with-placeholder" required  #username="ngModel">
+        <div *ngIf="usernameError" class="error" style="color: red;">
+          {{ usernameError }}
         </div>
-        <div class="input-box">
-            <input type="text" placeholder="Nhập email*" class="input-with-placeholder">
-            <label for="#">Email</label>
+      </div>
+
+      <div class="input-box">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="user.email" name="email" placeholder="Nhập email*" class="input-with-placeholder" required email #email="ngModel">
+        <div *ngIf="emailError" class="error" style="color: red;">
+          {{ emailError }}
         </div>
-        <div class="input-box">
-            <input type="text" placeholder="Nhập mật khẩu*" class="input-with-placeholder">
-            <label for="#">Mật Khẩu</label>
+      </div>
+
+      <div class="input-box">
+        <label for="password">Mật Khẩu</label>
+        <input type="password" id="password" [(ngModel)]="user.password" name="password" placeholder="Nhập mật khẩu*" class="input-with-placeholder" required #password="ngModel">
+        <div *ngIf="passwordError" class="error" style="color: red;">
+          {{ passwordError }}
         </div>
-        <div class="forgot-section">
-            <span><input type="checkbox" name="" id="checked">Nhớ mật khẩu.</span>
-            <span><a href="#">Quên mật khẩu?</a></span>
-        </div>
-        <button class="btn-register">Tạo Tài Khoản</button>
+      </div>
+      <div class="forgot-section">
+        <span><input type="checkbox" name="remember" id="remember">Nhớ mật khẩu.</span>
+        <span><a href="#">Quên mật khẩu?</a></span>
+      </div>
+      <button type="submit" class="btn-register">Tạo Tài Khoản</button>
     </form>
     
     <p class="LoginBtn"><a href="#">Đăng Nhập Ngay</a></p>

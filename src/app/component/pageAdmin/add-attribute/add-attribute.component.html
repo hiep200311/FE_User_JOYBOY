@@ -1,0 +1,100 @@
+<body>
+    <div class="container">
+        <h1>Thuộc tính sản phẩm</h1>
+        <br>
+        <div class="content">
+            <div class="form-section">
+                <form>
+                    <h2>Tạo mới thuộc tính</h2>
+                    <label for="name">Tên</label>
+                    <input type="text" id="name" name="name">
+                    
+
+                    <label for="slug">Slug</label>
+                    <input type="text" id="slug" name="slug">
+
+                    <label for="parent">Parent</label>
+                    <select id="parent" name="parent">
+                        <option value="none">None</option>
+                    </select>
+
+                    <label for="description">Mô tả</label>
+                    <textarea id="description" name="description"></textarea>
+
+                    <label for="display-type">Kiểu hiển thị</label>
+                    <select id="display-type" name="display-type">
+                        <option value="default">Default</option>
+                    </select>
+
+                    
+
+                    <button type="submit" class="add-button">Tạo thuộc tính</button>
+                </form>
+            </div>
+            <div class="categories-section">
+                <h2>Thuộc Tính</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Hình ảnh</th>
+                            <th>Tên</th>
+                            <th>Mô tả</th>
+                            <th>Slug</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="path/to/image.png" alt="Clothing"></td>
+                            <td>Clothing</td>
+                            <td></td>
+                            <td>clothing</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="path/to/image.png" alt="Hoodies"></td>
+                            <td>— Hoodies</td>
+                            <td></td>
+                            <td>hoodies</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="path/to/image.png" alt="T-shirts"></td>
+                            <td>— T-shirts</td>
+                            <td></td>
+                            <td>t-shirts</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="path/to/image.png" alt="Music"></td>
+                            <td>Music</td>
+                            <td></td>
+                            <td>music</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="path/to/image.png" alt="Albums"></td>
+                            <td>— Albums</td>
+                            <td></td>
+                            <td>albums</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="path/to/image.png" alt="Singles"></td>
+                            <td>— Singles</td>
+                            <td></td>
+                            <td>singles</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

@@ -16,6 +16,17 @@
     align-items: center;
     color: #fff;
 }
+
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
 .container {
     height: 650px;
     width: 410px;
